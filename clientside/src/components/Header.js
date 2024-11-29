@@ -41,11 +41,11 @@ function Header() {
 
             <div className="absolute inset-0 bg-black opacity-70 h-[600px]"></div>
 
-            <nav className="relative flex justify-between items-center px-10 py-4 bg-opacity-20 bg-black text-white">
+            <nav className="relative flex items-center justify-between px-10 py-4 text-white bg-black bg-opacity-20">
               
                 <h1 className="text-3xl font-bold "><span className="text-primary">In-</span>Event</h1>
 
-                <ul className="flex space-x-6 text-lg font-medium relative">
+                <ul className="relative flex space-x-6 text-lg font-medium">
                     <li>
                         <a
                             href="#home"
@@ -60,7 +60,7 @@ function Header() {
                             href="#events"
                             className={`hover:text-primary ${activeNav === "events" ? "text-primary" : ""}`}
                             onClick={() => {
-                                handleNavClick("events"); // Set active on click
+                                handleNavClick("events"); 
                                 toggleDropdown();
                             }}
                         >
@@ -72,7 +72,7 @@ function Header() {
                                     events.map((event) => (
                                         <li
                                             key={event.id}
-                                            className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                                            className="px-4 py-2 cursor-pointer hover:bg-gray-100"
                                         >
                                             {event.name}
                                         </li>
@@ -89,11 +89,9 @@ function Header() {
                             className={`hover:text-primary ${activeNav === "about" ? "text-primary" : ""}`}
                             onClick={() => handleNavClick("about")}
                         >
-                            About
+                            About Us
                         </a>
                     </li>
-
-
 
                     <li>
                         <a
@@ -101,18 +99,18 @@ function Header() {
                             className={`hover:text-primary ${activeNav === "contact" ? "text-primary" : ""}`}
                             onClick={() => handleNavClick("contact")}
                         >
-                            Contact
+                            Contact Us
                         </a>
                     </li>
                 </ul>
 
-                <div className="flex items-center bg-white rounded-full px-4 py-2">
+                <div className="flex items-center px-4 py-2 bg-white rounded-full">
                     <input
                         type="text"
                         placeholder="Search..."
-                        className="w-full bg-transparent focus:outline-none text-black"
+                        className="w-full text-black bg-transparent focus:outline-none"
                     />
-                    <button className="text-black ml-2 hover:text-secondary">
+                    <button className="ml-2 text-black hover:text-secondary">
                         🔍
                     </button>
                 </div>
@@ -120,8 +118,8 @@ function Header() {
 
             <div className="relative p-5 gap-8 flex flex-col h-[500px] items-center justify-center">
                 <img src="https://pngimg.com/uploads/wedding/wedding_PNG19527.png" alt="" />
-                <h4 className="text-white font-bold text-xl">Countries best Organizer</h4>
-                <h2 className="text-4xl font-bold text-white  px-6 py-3 rounded-lg ">
+                <h4 className="text-xl font-bold text-white">Countries best Organizer</h4>
+                <h2 className="px-6 py-3 text-4xl font-bold text-white rounded-lg ">
                     Crafting Memories, One Event at a Time.
                 </h2>
             </div>
