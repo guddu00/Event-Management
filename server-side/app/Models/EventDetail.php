@@ -43,9 +43,7 @@ class EventDetail extends Model
         'budget' => 'float',
     ];
 
-    /**
-     * Relationship: EventDetail belongs to an Event.
-     */
+   
     public function event()
     {
         return $this->belongsTo(Event::class);

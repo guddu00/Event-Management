@@ -6,9 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class AddImageToEventsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+    
     public function up(): void
     {
         Schema::table('events', function (Blueprint $table) {
@@ -16,9 +14,7 @@ class AddImageToEventsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+    
     public function down(): void
     {
         Schema::table('events', function (Blueprint $table) {

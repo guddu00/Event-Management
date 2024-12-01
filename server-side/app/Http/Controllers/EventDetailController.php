@@ -7,18 +7,14 @@ use Illuminate\Http\Request;
 
 class EventDetailController extends Controller
 {
-    /**
-     * Display a listing of all event details.
-     */
+    
     public function index()
     {
         $eventDetails = EventDetail::all();
         return response()->json($eventDetails, 200);
     }
 
-    /**
-     * Store a newly created event detail in storage.
-     */
+    
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -41,9 +37,6 @@ class EventDetailController extends Controller
         return response()->json($eventDetail, 201);
     }
 
-    /**
-     * Display the specified event detail.
-     */
     public function show($id)
     {
         $eventDetail = EventDetail::find($id);
@@ -55,9 +48,6 @@ class EventDetailController extends Controller
         return response()->json($eventDetail, 200);
     }
 
-    /**
-     * Update the specified event detail in storage.
-     */
     public function update(Request $request, $id)
     {
         $eventDetail = EventDetail::find($id);
@@ -86,9 +76,6 @@ class EventDetailController extends Controller
         return response()->json($eventDetail, 200);
     }
 
-    /**
-     * Remove the specified event detail from storage.
-     */
     public function destroy($id)
     {
         $eventDetail = EventDetail::find($id);
