@@ -37,16 +37,25 @@ class EventDetailController extends Controller
         return response()->json($eventDetail, 201);
     }
 
-    public function show($id)
-    {
-        $eventDetail = EventDetail::find($id);
+    public function show($event_id)
+{
+    $event = EventDetail::where('event_id', $event_id)->get();
 
-        if (!$eventDetail) {
-            return response()->json(['error' => 'Event detail not found'], 404);
-        }
-
-        return response()->json($eventDetail, 200);
+    if ($event->isEmpty()) {
+        return response()->json([
+            'success' => false,
+            'message' => 'Event not found.'
+        ], 404);
     }
+
+    return response()->json(
+         $event
+    , 200);
+}
+
+
+
+
 
     public function update(Request $request, $id)
     {
@@ -61,7 +70,7 @@ class EventDetailController extends Controller
             'location' => 'sometimes|string|max:255',
             'date' => 'sometimes|date',
             'organizer_name' => 'sometimes|string|max:255',
-            'attendees_count' => 'sometimes|integer|min:0',
+            'attendees_count' => 'sometimes|integer|mn:0',
             'budget' => 'sometimes|numeric|min:0',
             'features' => 'sometimes|array',
             'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\EventDetail;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
@@ -12,7 +12,7 @@ class EventController extends Controller
         return response()->json(Event::all(), 200);
     }
 
-
+   
 
     public function store(Request $request)
 {

@@ -59,7 +59,7 @@ function Header() {
                     </li>
 
                     <li>
-                        <NavLink to="/contact" className="hover:text-primary" activeClassName="text-primary">
+                        <NavLink to="/contactus" className="hover:text-primary" activeClassName="text-primary">
                             Contact Us
                         </NavLink>
                     </li>
